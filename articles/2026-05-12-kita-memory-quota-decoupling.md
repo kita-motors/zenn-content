@@ -3,7 +3,7 @@ title: "Claude Code の会話を Supabase に長期記憶していたら Gemini 
 emoji: "🪫"
 type: "tech"
 topics: ["claudecode", "supabase", "gemini", "pgvector", "pgcron"]
-published: false
+published: true
 ---
 
 Claude Code の会話を Supabase + pgvector で長期記憶化する CLI（kita-memory）を自作して運用しています。Stop hook で Q&A をベクトル化して保存する素朴な構成だったのですが、ある日から会話の保存がぽろぽろ落ち始めました。原因は Gemini Embedding API の無料枠 1,000 req/日にぶつかっていたこと。「保存」と「embedding」を hook の中で密結合させていた設計の素朴さが祟った形です。本記事では、これをどう設計し直したかを、非エンジニアの私が試行錯誤した目線で書きます。同じく Claude Code の会話保存を自作している方の参考になれば幸いです。
