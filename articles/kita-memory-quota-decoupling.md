@@ -3,7 +3,7 @@ title: "Claude Code の会話を Supabase に保存していたら Gemini 無料
 emoji: "🪫"
 type: "tech"
 topics: ["claudecode", "supabase", "gemini", "pgvector", "pgcron"]
-published: false
+published: true
 ---
 
 Claude Code の会話を Supabase + pgvector で長期記憶化する CLI（`kita-memory`）を運用しています。Stop hook で会話を取り、Gemini Embedding API でベクトル化して `memories` テーブルに INSERT する、という素朴な構成でした。
